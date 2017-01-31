@@ -6,14 +6,14 @@ categories:
 ## Account Takeover Detection via ThisData
 
 This rule is designed to detect phished or compromised user accounts, and
-optionally send an email or SMS notification to user asking
+optionally send an email or SMS notification to the user asking
 "Was This You?". This is similar to the emails you get signing in to Google or
 Facebook from a new device or location.
 The users' response can be used to take further action, like shutting
 down a compromised account.
 
 It uses [ThisData's](https://thisdata.com) anomaly detection
-algorithms which take into account many behavioural factors including:
+algorithms which take into account many behavioral factors including:
 
 * Location & Velocity
 * Devices
@@ -32,12 +32,20 @@ Prerequisites
 You will need a ThisData API Key. Sign up for a free ThisData
 account at https://thisdata.com/sign-up
 
-Enable end user notifications on ThisData.com
+Configuration
+-------------
+
+Notifications are disabled by default - you have full control over how we
+contact your users. Visit ThisData.com to configure:
+
+  - Sending "Was This You" notifications via email or SMS (text message)
+  - Slack notifications
+  - webhooks to your app
 
 Learn More
 ----------
 
-Read our guide "How-to add login anomaly detection to Auth0"
+Read our guide "How to add login anomaly detection to Auth0"
   https://thisdata.com/blog/how-to-add-login-anomaly-detection-to-auth0/
 
 Contact ThisData: support@thisdata.com
@@ -73,4 +81,3 @@ function (user, context, callback) {
   callback(null, user, context);
 }
 ```
-

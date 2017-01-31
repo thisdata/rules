@@ -11,7 +11,7 @@ authentication is approved (e.g. correct username and password) it will deny
 access if the login appears to be highly suspicious.
 
 It uses [ThisData's](https://thisdata.com) anomaly detection
-algorithms which take into account many behavioural factors including:
+algorithms which take into account many behavioral factors including:
 
 * Location & Velocity
 * Devices
@@ -39,7 +39,7 @@ both rules allows you to achieve results of higher accuracy.
 Learn More
 ----------
 
-Read our guide "How-to add login anomaly detection to Auth0"
+Read our guide "How to add login anomaly detection to Auth0"
   https://thisdata.com/blog/how-to-add-login-anomaly-detection-to-auth0/
 
 Contact ThisData: support@thisdata.com
