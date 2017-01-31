@@ -3,12 +3,16 @@ gallery: true
 categories:
 - webhook
 ---
-## Send login anomaly emails
+## Account Takeover Detection via ThisData
 
-This rule is designed to detect phished or compromised accounts
-and notify the user with a "was this you?" email notification.
+This rule is designed to detect phished or compromised user accounts, and
+optionally send an email or SMS notification to user asking
+"Was This You?". This is similar to the emails you get signing in to Google or
+Facebook from a new device or location.
+The users' response can be used to take further action, like shutting
+down a compromised account.
 
-It relies on the [ThisData](https://thisdata.com) anomaly detection
+It uses [ThisData's](https://thisdata.com) anomaly detection
 algorithms which take into account many behavioural factors including:
 
 * Location & Velocity
@@ -18,9 +22,28 @@ algorithms which take into account many behavioural factors including:
 * Risky IP addresses
 * And more...
 
-###Prerequisites
+This rule works in the background, and will never stop your users from logging
+in to your application. Use our "Account Takeover Prevention via ThisData" Auth0
+rule to stop suspicious log-ins in their tracks.
+
+Prerequisites
+-------------
+
 You will need a ThisData API Key. Sign up for a free ThisData
 account at https://thisdata.com/sign-up
+
+Enable end user notifications on ThisData.com
+
+Learn More
+----------
+
+Read our guide "How-to add login anomaly detection to Auth0"
+  https://thisdata.com/blog/how-to-add-login-anomaly-detection-to-auth0/
+
+Contact ThisData: support@thisdata.com
+
+Auth0 Rule
+----------
 
 ```js
 function (user, context, callback) {
@@ -50,3 +73,4 @@ function (user, context, callback) {
   callback(null, user, context);
 }
 ```
+
